@@ -1,0 +1,119 @@
+name: render-public-test
+
+# ENCRYPTED-PUBLIC route — proof test (user-approved design, 2026-11-23).
+# The repo is PUBLIC and Actions minutes are unlimited, but the repo contains
+# ONLY AES-256 ciphertext parts + a hash manifest (under payload/). The
+# password exists solely as the repo secret RENDER_KEY. The runner decrypts
+# in-memory-workspace, renders a SHORT test, and ships the result as an
+# artifact. Rendered output is NEVER committed back to the repo.
+#
+# Expected repo layout (all of it committed by relay.py — the payload parts
+# are ciphertext produced by the render-staging workflow on the PRIVATE repo
+# and relayed here; nothing is packed locally):
+#   .github/workflows/render-public-test.yml   (this file)
+#   unpack.sh                                  (repo root)
+#   payload/payload.tar.gz.enc.part-*          (ciphertext, from relay.py)
+#   payload/payload.manifest                   (hashes only, from relay.py)
+#
+# The decrypted payload must contain: package.json, render_ci.mjs, and the
+# composition entry file named by the `entry` input.
+
+on:
+  workflow_dispatch:
+    inputs:
+      entry:
+        description: "Composition entry file inside the payload"
+        required: true
+        default: "src/index.tsx"
+      comp:
+        description: "Composition id"
+        required: true
+        default: "PublicRouteTest"
+      start:
+        description: "First frame"
+        required: true
+        default: "0"
+      end:
+        description: "Last frame (keep the test tiny)"
+        required: true
+        default: "29"
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install system deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Check RENDER_KEY secret is set
+        env:
+          RENDER_KEY: ${{ secrets.RENDER_KEY }}
+        run: |
+          if [ -z "$RENDER_KEY" ]; then
+            echo "ERROR: RENDER_KEY secret is not set on this repo." >&2
+            echo "Set it under Settings -> Secrets and variables -> Actions -> New repository secret (name: RENDER_KEY). It must be the SAME password as the RENDER_KEY secret on the private staging repo." >&2
+            exit 1
+          fi
+          echo "RENDER_KEY secret is present (value never printed)."
+
+      - name: Unpack encrypted payload
+        env:
+          RENDER_KEY: ${{ secrets.RENDER_KEY }}
+        run: bash unpack.sh payload work
+
+      - name: Pick a Chrome
+        run: |
+          if [ -n "$(command -v google-chrome)" ]; then
+            echo "CHROME_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            curl -sL -o /tmp/chrome.zip https://storage.googleapis.com/chrome-for-testing-public/157.0.8103.38/linux64/chrome-linux64.zip
+            unzip -q /tmp/chrome.zip -d /tmp/chrome
+            echo "CHROME_PATH=/tmp/chrome/chrome-linux64/chrome" >> "$GITHUB_ENV"
+          fi
+          echo "Using CHROME_PATH=$CHROME_PATH"
+
+      - name: Install project deps (inside decrypted payload)
+        working-directory: work
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci --no-audit --no-fund
+          else
+            npm install --no-audit --no-fund
+          fi
+
+      - name: Render test frames (PNG, Spain render_ci.mjs)
+        working-directory: work
+        env:
+          ENTRY: ${{ github.workspace }}/work/${{ inputs.entry }}
+          COMP_ID: ${{ inputs.comp }}
+          BUNDLE_OUT: ${{ github.workspace }}/work/bundle
+        run: node render_ci.mjs ${{ inputs.start }} ${{ inputs.end }} frames
+
+      - name: Encode test segment
+        working-directory: work
+        run: |
+          N=$(ls frames/element-*.png | wc -l)
+          ffmpeg -y -v error -framerate 30 -start_number ${{ inputs.start }} \
+            -i frames/element-%03d.png -frames:v "$N" \
+            -c:v libx264 -crf 16 -pix_fmt yuv420p test-segment.mp4
+          ls -la test-segment.mp4 frames | head -40
+
+      - name: Upload rendered test output (artifact — never committed)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-route-test-output
+          path: |
+            work/test-segment.mp4
+            work/frames/
+          retention-days: 7
+          if-no-files-found: warn
