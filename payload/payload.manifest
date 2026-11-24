@@ -1,0 +1,13 @@
+# encrypted-public render payload manifest
+# Only hashes and sizes — no content, no password.
+format=1
+archive_file=payload.tar.gz
+archive_sha256=d03ed6e80a23ecae599a0d29a7d98d6164c5c3a9d7b4d74e70db93291bff21bd
+archive_size=2077
+encrypted_file=payload.tar.gz.enc
+encrypted_sha256=0009774b279b1df938ef4077e9bbb79530e725f09d20807209bb28c5d1119ce5
+part_count=1
+created_utc=2026-11-24T14:44:21Z
+source_dir=test-payload
+# parts:
+payload.tar.gz.enc.part-000 sha256=0009774b279b1df938ef4077e9bbb79530e725f09d20807209bb28c5d1119ce5 size=2096
