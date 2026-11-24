@@ -2,12 +2,12 @@
 # Only hashes and sizes — no content, no password.
 format=1
 archive_file=payload.tar.gz
-archive_sha256=304e480ef8652ec01b95dcc3416a7e2d067c46d3990861a7041e18c7a9beb54d
-archive_size=30538665
+archive_sha256=fc35747c2800754c1a172ce6aeffa8750f0033a91475d8b4d13da572c674f494
+archive_size=24150999
 encrypted_file=payload.tar.gz.enc
-encrypted_sha256=9d2b1cdf889c1746fab499c5ce105f7cfa201e90f8486109c134221d0d293b1b
+encrypted_sha256=417cf64544faed727a91a8678390e342d8b017d5771cd59dc431667095deae5f
 part_count=1
-created_utc=2026-11-24T19:08:13Z
-source_dir=stage-gerpart5
+created_utc=2026-11-24T19:13:15Z
+source_dir=stage-gerpart6
 # parts:
-payload.tar.gz.enc.part-000 sha256=9d2b1cdf889c1746fab499c5ce105f7cfa201e90f8486109c134221d0d293b1b size=30538688
+payload.tar.gz.enc.part-000 sha256=417cf64544faed727a91a8678390e342d8b017d5771cd59dc431667095deae5f size=24151024
