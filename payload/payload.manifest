@@ -2,12 +2,12 @@
 # Only hashes and sizes — no content, no password.
 format=1
 archive_file=payload.tar.gz
-archive_sha256=236b02781d411c0b05ccdc57a2e4331651433b950f37c1181ad9a00eec7ae5c9
-archive_size=9603406
+archive_sha256=83ce65afcade15801f1007b4a31d00b8e364e12932acf1c2e97ceb1c700343f5
+archive_size=10183146
 encrypted_file=payload.tar.gz.enc
-encrypted_sha256=5933c501beb50a4a4d6f98f692040ae3f05d5f9ce8270939ef15762e7252a0f5
+encrypted_sha256=f3b023ae97757053dceedc7dc106df1ad4600a454f39019413e11c96b00107ed
 part_count=1
-created_utc=2026-11-25T22:06:54Z
-source_dir=stage-irlpart4
+created_utc=2026-11-25T22:07:37Z
+source_dir=stage-irlpart5
 # parts:
-payload.tar.gz.enc.part-000 sha256=5933c501beb50a4a4d6f98f692040ae3f05d5f9ce8270939ef15762e7252a0f5 size=9603424
+payload.tar.gz.enc.part-000 sha256=f3b023ae97757053dceedc7dc106df1ad4600a454f39019413e11c96b00107ed size=10183168
