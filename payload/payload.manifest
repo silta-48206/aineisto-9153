@@ -2,16 +2,16 @@
 # Only hashes and sizes — no content, no password.
 format=1
 archive_file=payload.tar.gz
-archive_sha256=098db4715f2d0a0022a7b18272dc9d1258ccdb61cb3b9f7da102881630ec220d
-archive_size=41947842
+archive_sha256=60f862d0518f41bcd19238476f448a0db13938c4e747e66c5d004e4e5d56389f
+archive_size=51614084
 encrypted_file=payload.tar.gz.enc
-encrypted_sha256=57ee05dbb323e86b12508e01cd10bdca9e5bcdb31e0d7f76a60337c68061e441
+encrypted_sha256=2c40d64350f71f06ff190dcba143c91e0823be0b7180715b92b3eb921a20301d
 part_count=5
-created_utc=2026-11-26T20:05:27Z
-source_dir=stage-nbhook
+created_utc=2026-11-26T22:43:46Z
+source_dir=stage-nbpart1
 # parts:
-payload.tar.gz.enc.part-000 sha256=d7acf7881b23075be525d7e5a4f418489b80ae99719497272015c7565bcba4d3 size=10485760
-payload.tar.gz.enc.part-001 sha256=02aa0be3db65193a5e47e28f1ace06a45cd2a50a0380c0f62ca685794b829749 size=10485760
-payload.tar.gz.enc.part-002 sha256=4005a44a311893c18868630cbf2e60ef90cb616b8e28da75d26d7c926bcd8663 size=10485760
-payload.tar.gz.enc.part-003 sha256=460762a6a88deb2b2d4dca2706efd22b7662c3ed9180cc8e2d300ea3df2bb58c size=10485760
-payload.tar.gz.enc.part-004 sha256=bbcc02dcd3bc5faed5ad057eb9b5670b94f046c5a3695dd5a742a9cef75c9628 size=4832
+payload.tar.gz.enc.part-000 sha256=6ca7b50073eae0072ec3e4d20736d14f2812773289c6819a9f31d04f2922b054 size=10485760
+payload.tar.gz.enc.part-001 sha256=ece0cde7e63105f83997435612e9075d714e8a67cd411df1158e357f516ef45e size=10485760
+payload.tar.gz.enc.part-002 sha256=17c007325030c3c0595ded195ff5bc457c8e17cc88287fb1c2928353ab85ef3d size=10485760
+payload.tar.gz.enc.part-003 sha256=a6a60e510dd33688a4972761d32a3149021979d431562670cf4a830b74bacb4f size=10485760
+payload.tar.gz.enc.part-004 sha256=4c6c3de110463e562d227a60bb9214dd7eff8416213b966e2f07d27ff2624c60 size=9671072
