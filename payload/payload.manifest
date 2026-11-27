@@ -2,13 +2,12 @@
 # Only hashes and sizes — no content, no password.
 format=1
 archive_file=payload.tar.gz
-archive_sha256=4997f36967237cdc31aff7628bac741f8fd29899e4ba33630bd4901ac089882d
-archive_size=11022205
+archive_sha256=42b6035a444c9cfb3499a340beb6c68a1c93825d4366d27ee25e912704fbe92a
+archive_size=5802589
 encrypted_file=payload.tar.gz.enc
-encrypted_sha256=9fe81878a1de1a10dfc79bfb1ae703a180662975191f17daf505d036a5e44163
-part_count=2
-created_utc=2026-11-27T12:32:26Z
-source_dir=stage-bdemo3
+encrypted_sha256=dcdea8156a0bbb00cf700fb91cb7663a6f40273e3ab4aadd075b4b882ebe2adb
+part_count=1
+created_utc=2026-11-27T13:21:49Z
+source_dir=stage-puppet
 # parts:
-payload.tar.gz.enc.part-000 sha256=58b93cd43ed39a602e00241b831d50a353b0060a5450259f2917c712c297de32 size=10485760
-payload.tar.gz.enc.part-001 sha256=b445f4dfaf965f7ad8d48ec5649f0bafc807b84fb2e106a832f13bbc1fa68bfe size=536464
+payload.tar.gz.enc.part-000 sha256=dcdea8156a0bbb00cf700fb91cb7663a6f40273e3ab4aadd075b4b882ebe2adb size=5802608
