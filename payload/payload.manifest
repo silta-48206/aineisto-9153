@@ -2,18 +2,17 @@
 # Only hashes and sizes — no content, no password.
 format=1
 archive_file=payload.tar.gz
-archive_sha256=d6f5665d3cb386fd302b7ec62749f38ab220f7e9a9eb45eac80cb552b679dd63
-archive_size=69249390
+archive_sha256=42bcf81a1ac6082acfa01615646681001c737a5e76cba7783defa65f161470f3
+archive_size=62154070
 encrypted_file=payload.tar.gz.enc
-encrypted_sha256=08b35939d27a53e587aa9b5647a82f46f209193e9f2c6248ea4f7171e85fd3c6
-part_count=7
-created_utc=2026-11-27T01:37:16Z
-source_dir=stage-nbpart4
+encrypted_sha256=43109940a88993ef6d03fdb88015b7adfe76e8c51b900c36a6da76916f239b9e
+part_count=6
+created_utc=2026-11-27T02:23:30Z
+source_dir=stage-nbpart5
 # parts:
-payload.tar.gz.enc.part-000 sha256=c625919250ce51bd572418a61b425e665d8adb4ff8e78df4cdb27160f3d8b155 size=10485760
-payload.tar.gz.enc.part-001 sha256=0ccf5e5a5cb5e84d1c3d24e3886ca121fe0739dd24353e34036c419eea94dd18 size=10485760
-payload.tar.gz.enc.part-002 sha256=20e5920756e80c4e59d2a4c91d336adde9566d247a536974ca9e11a9cb89a897 size=10485760
-payload.tar.gz.enc.part-003 sha256=18c2fc64ff60f0385ec4032c10780cd18af2254ddb29d23c429e1d1c5e1df24c size=10485760
-payload.tar.gz.enc.part-004 sha256=b9002f7266e2ca4db81e04e56595d965891374552e75fca313bf8f16ad181457 size=10485760
-payload.tar.gz.enc.part-005 sha256=4a3c8fd8e0646df6c5af44ae18d279ba98d307adafa99d5b6f8755266ec6686a size=10485760
-payload.tar.gz.enc.part-006 sha256=ac00259642b505a74a72b10eca41b2714b4db9b4d425d1e6fd316074f68720fb size=6334848
+payload.tar.gz.enc.part-000 sha256=6dba7640019c2c0b9e0501ee7fad3bfbf5b9acae616018a9682c7634c4a35c64 size=10485760
+payload.tar.gz.enc.part-001 sha256=62ce14a9b21f756d3735e01c8c1bb8181cee33414972e40efc829591c0dfcc7b size=10485760
+payload.tar.gz.enc.part-002 sha256=14b7777a8b5e7a4896cff2754d2535c9c35c94ac747d06a31fb327e3bc5e431e size=10485760
+payload.tar.gz.enc.part-003 sha256=705fe1befb1c42bada171a486ffe501ebb315653878daf7384707d3ff73abe5a size=10485760
+payload.tar.gz.enc.part-004 sha256=bc81400fac17b651743a0d6e6cd3730144b4b584c8e3ce432566ed05a931c2ef size=10485760
+payload.tar.gz.enc.part-005 sha256=64dd05d3c4ef7809ac4b14b69faf4e98a9cc3644418033bb5eeecd23c69727b5 size=9725296
