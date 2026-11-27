@@ -2,16 +2,13 @@
 # Only hashes and sizes — no content, no password.
 format=1
 archive_file=payload.tar.gz
-archive_sha256=d4e20f0f126b189a6c13fc391fad657114cabb1afadf36714e0145feafb88d5d
-archive_size=49628332
+archive_sha256=4997f36967237cdc31aff7628bac741f8fd29899e4ba33630bd4901ac089882d
+archive_size=11022205
 encrypted_file=payload.tar.gz.enc
-encrypted_sha256=5fe43780fd2da30d07c31f7073faa8422be0723477d5d961a7b0bacd8025fa13
-part_count=5
-created_utc=2026-11-27T06:49:27Z
-source_dir=stage-nbpart10
+encrypted_sha256=9fe81878a1de1a10dfc79bfb1ae703a180662975191f17daf505d036a5e44163
+part_count=2
+created_utc=2026-11-27T12:32:26Z
+source_dir=stage-bdemo3
 # parts:
-payload.tar.gz.enc.part-000 sha256=60b3f95275bd89045499c4789b9de2e32dcdbc939abc51c114886479d0912f5d size=10485760
-payload.tar.gz.enc.part-001 sha256=b82910e86426776831ee5f327208b136556ff29a7fd15c70f91b13fb6402e023 size=10485760
-payload.tar.gz.enc.part-002 sha256=6ef9547c83a5fd2fcb7e0aae2ed7e049f6f8d5fba8aacf5c176521fb116f851c size=10485760
-payload.tar.gz.enc.part-003 sha256=874f0ba41d67079ba73fe20b9f023089eb33cc4d6727b12f39aed7bdd2e9e5ac size=10485760
-payload.tar.gz.enc.part-004 sha256=c0b50b722b2301bc26759074368145029ac74972e39a1ccc8afa1c92321697ae size=7685312
+payload.tar.gz.enc.part-000 sha256=58b93cd43ed39a602e00241b831d50a353b0060a5450259f2917c712c297de32 size=10485760
+payload.tar.gz.enc.part-001 sha256=b445f4dfaf965f7ad8d48ec5649f0bafc807b84fb2e106a832f13bbc1fa68bfe size=536464
