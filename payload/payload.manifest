@@ -1,0 +1,14 @@
+# encrypted-public render payload manifest
+# Only hashes and sizes — no content, no password.
+format=1
+archive_file=payload.tar.gz
+archive_sha256=76ae7a76c351ec78e6d3c5f7c66c6ca58996dfcbc82a8b2d9aba954810ebc0e2
+archive_size=18716102
+encrypted_file=payload.tar.gz.enc
+encrypted_sha256=68f0a06f177ea28151404a68beb43a6fd7dc97f9c02c8a3d4a6d08eb93f8d077
+part_count=2
+created_utc=2026-11-28T17:55:50Z
+source_dir=beatenhook-payload
+# parts:
+payload.tar.gz.enc.part-000 sha256=b2926fa151a8bb2ecd102ac110e6976b069011213fac0535615ecc4230a6ef9f size=10485760
+payload.tar.gz.enc.part-001 sha256=29ba63c8b2d324d0944608c4663a5cf494fb578f8072fa50d107f44c7fed726e size=8230368
